@@ -1,23 +1,16 @@
 
+import { useState } from "react";
 
 
-const Content = () => {
-  const handleClick = () => {
-    alert("You clicked me!");
-    
-  }
-  const handleClicks = (event) => {
-    console.log(event.type);
-  }
+function Content() {
+    const [count, setCount] = useState(0);
 
-
-
-  return <>
-      <button onClick={handleClick}>Click me</button>
-      <button onClick={(event) => handleClicks(event)}>Click me</button>
-  </>
-
-  
-};
+    return (
+        <div>
+            <p style={{background: "black", color: "white"}}>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increase</button>
+        </div>
+    );
+}
 
 export default Content;
